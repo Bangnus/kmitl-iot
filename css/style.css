@@ -1,0 +1,38 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Kanit", sans-serif;
+  background-color: #000;
+}
+
+/* ใส่แสงสีส้มแบบ Gradient ตรงกลางพื้นหลังให้เหมือนในภาพ */
+.radial-bg {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    #ff7f32 0%,
+    #994c1e 0%,
+    #000000 94%
+  );
+  min-height: 100vh;
+}
+
+/* กล่องขอบสีส้มกึ่งโปร่งใส */
+.border-orange-glow {
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  background: rgba(10, 5, 0, 0.6);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s;
+}
+.border-orange-glow:hover {
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
+  border-color: rgba(217, 119, 6, 0.8);
+}
+
+.bg-orange-gradient {
+  background: linear-gradient(90deg, #ea580c, #9a3412);
+}
+
+.text-primary {
+  color: #FF7F32; 
+}
