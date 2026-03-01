@@ -60,3 +60,16 @@ document
     }
     window.requestAnimationFrame(animation);
   });
+
+// Make sure contact is active in mobile menu as well
+const currentUrl = window.location.pathname.split("/").pop();
+const mobileLinks = document.querySelectorAll("#mobile-menu a");
+mobileLinks.forEach((link) => {
+  if (link.getAttribute("href") === currentUrl) {
+    link.className =
+      "bg-orange-600/20 text-primary block px-4 py-3 rounded-md text-base font-medium border-l-4 border-orange-500";
+  } else {
+    link.className =
+      "text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors";
+  }
+});

@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic - Department of IoT and Information Engineering</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="radial-bg text-gray-200">
+    <!-- Top Info Bar -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-center py-4 px-4 md:px-8 text-xs text-gray-400 gap-2 md:gap-0"
+    >
+      <div class="hidden md:block font-semibold text-white text-left text-lg">
+        IoT and Information Engineering, KMITL
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="text-[14px]"
+          ><i class="fa-solid fa-location-dot mr-1 text-orange-500"></i> E-12
+          buildind</span
+        >
+        <span class="text-[14px]"
+          ><i class="fa-solid fa-envelope mr-1 text-orange-500"></i>
+          iot@kmitl.ac.th</span
+        >
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav
+      class="border-y border-orange-500/20 relative z-20 bg-black/50 backdrop-blur-md sticky top-0"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 w-full">
+          <!-- Mobile Brand Logo/Text -->
+          <div class="md:hidden flex flex-1 items-center pr-4">
+            <span
+              class="font-semibold text-white text-sm sm:text-base line-clamp-1"
+            >
+              IoT and Information Engineering, KMITL
+            </span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex flex-1 justify-center items-center">
+            <ul
+              class="flex space-x-4 lg:space-x-8 text-sm font-medium items-center"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="px-5 py-2 hover:bg-orange-500 hover:text-white rounded-md transition-colors text-gray-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="px-3 py-2 text-gray-300 hover:text-orange-500 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="academic.html"
+                  class="px-5 py-2 bg-primary text-white rounded-md shadow-[0_0_10px_rgba(234,88,12,0.5)] transition-colors"
+                  >Academic</a
+                >
+              </li>
+              <li>
+                <a
+                  href="admission.html"
+                  class="px-3 py-2 text-gray-300 hover:text-orange-500 transition-colors"
+                  >Admission</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="px-3 py-2 text-gray-300 hover:text-orange-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="faculty.html"
+                  class="px-3 py-2 text-gray-300 hover:text-orange-500 transition-colors"
+                  >Faculty</a
+                >
+              </li>
+              <li>
+                <a
+                  href="performance.html"
+                  class="px-3 py-2 text-gray-300 hover:text-orange-500 transition-colors"
+                  >Performance</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desktop Search Bar -->
+          <div class="hidden md:flex items-center">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search..."
+                class="bg-gray-800/80 text-white text-sm rounded-full pl-4 pr-10 py-1.5 border border-gray-700 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all w-40 lg:w-48 placeholder-gray-500"
+              />
+              <button
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+              >
+                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="flex md:hidden items-center justify-end">
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-lg bg-[#141a21] text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition-colors"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <!-- FontAwesome Icons (Menu & X) -->
+              <div
+                id="fa-menu-icon"
+                class="w-6 h-6 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-bars text-xl"></i>
+              </div>
+              <div
+                id="fa-close-icon"
+                class="w-6 h-6 hidden items-center justify-center"
+              >
+                <i class="fa-solid fa-xmark text-xl"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div
+        class="md:hidden hidden bg-gray-900/95 backdrop-blur-lg border-b border-gray-800 absolute w-full shadow-2xl"
+        id="mobile-menu"
+      >
+        <div class="px-4 py-3 border-b border-gray-800">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="w-full bg-gray-800/80 text-white text-sm rounded-md pl-4 pr-10 py-2 border border-gray-700 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all placeholder-gray-500"
+            />
+            <button
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+        <div class="px-2 pt-2 pb-6 space-y-1 sm:px-3 shadow-inner">
+          <a
+            href="index.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >About</a
+          >
+          <a
+            href="academic.html"
+            class="bg-orange-600/20 text-primary block px-4 py-3 rounded-md text-base font-medium border-l-4 border-orange-500"
+            >Academic</a
+          >
+          <a
+            href="admission.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >Admission</a
+          >
+          <a
+            href="contact.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >Contact</a
+          >
+          <a
+            href="faculty.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >Faculty</a
+          >
+          <a
+            href="performance.html"
+            class="text-gray-300 hover:bg-gray-800 hover:text-orange-400 block px-4 py-3 rounded-md text-base font-medium transition-colors"
+            >Performance</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content for Academic -->
+    <main class="w-full py-12 md:py-16 min-h-[50vh]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Top Navigation Anchor Buttons -->
+        <div
+          id="program"
+          class="max-w-4xl mx-auto flex flex-col gap-4 mb-24 pt-4 scroll-mt-24"
+        >
+          <a
+            href="#program-iot"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-lg border border-orange-600/50 flex items-center shadow-lg transition-all"
+          >
+            <i class="fa-solid fa-chevron-down mr-4"></i>
+            Bachelor of Engineering (IoT System and Information)
+          </a>
+          <a
+            href="#program-dual-degree"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-lg border border-orange-600/50 flex items-center shadow-lg transition-all"
+          >
+            <i class="fa-solid fa-chevron-down mr-4"></i>
+            Bachelor of Science (Industrial Physics) and Bachelor of Engineering
+            (IoT System and Information)
+          </a>
+        </div>
+
+        <!-- Section 1: IoT Program Details -->
+        <div id="program-iot" class="scroll-mt-24 mb-24">
+          <div class="max-w-4xl mx-auto flex flex-col gap-0 mb-6">
+            <a
+              href="#program"
+              class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all"
+            >
+              <i class="fa-solid fa-chevron-up mr-4"></i>
+              Bachelor of Engineering (IoT System and Information)
+            </a>
+
+            <div
+              class="flex flex-col md:flex-row gap-6 bg-[#1a0e0a] border border-[#d26b32]/50 border-t-0 p-6 md:p-8 rounded-b-lg shadow-xl"
+            >
+              <!-- Left Images -->
+              <div class="w-full md:w-5/12 flex flex-col gap-4 shrink-0">
+                <img
+                  src="assets/images/image16.png"
+                  alt="Classroom Lecture"
+                  class="rounded-lg object-cover h-40 md:h-48 w-full border border-gray-800 shadow-md"
+                />
+                <img
+                  src="assets/images/image17.png"
+                  alt="Classroom Students"
+                  class="rounded-lg object-cover h-40 md:h-48 w-full border border-gray-800 shadow-md"
+                />
+              </div>
+
+              <!-- Right Content -->
+              <div
+                class="w-full md:w-7/12 flex flex-col justify-center text-left"
+              >
+                <h3 class="font-bold text-white text-lg md:text-xl mb-3">
+                  ทำไมต้อง <span class="tracking-wide">IoT</span> ลาดกระบัง?
+                </h3>
+
+                <p
+                  class="mb-8 text-[15px] md:text-base text-gray-200 font-medium leading-[1.8] text-pretty"
+                >
+                  หลักสูตรวิศวกรรมระบบไอโอทีและสารสนเทศ
+                  มุ่งพัฒนานักศึกษาให้เข้าใจและเชื่อมโลกดิจิทัลอย่างครบวงจร
+                  ครอบคลุมทั้ง ซอฟต์แวร์ (การเขียนโปรแกรม พัฒนาแอป) ฮาร์ดแวร์
+                  (อุปกรณ์อัจฉริยะ สมาร์ทเซ็นเซอร์) เครือข่ายและการสื่อสาร
+                  รวมถึง AI และวิทยาการข้อมูล
+                  นำความรู้มาผสานกับหลักวิศวกรรมและคณิตศาสตร์
+                  เพื่อสร้างนวัตกรรมที่ใช้งานได้จริงในภาคอุตสาหกรรม
+                  พร้อมต่อยอดสู่การทำ สตาร์ทอัปและธุรกิจของตนเองได้
+                </p>
+
+                <a
+                  href="#"
+                  class="inline-flex items-center bg-[#bd5c27] hover:bg-[#a64e1d] text-white py-3 md:py-4 px-4 md:px-5 rounded-lg text-sm md:text-base transition-colors w-full shadow-lg border border-orange-400/20"
+                >
+                  <i
+                    class="fa-regular fa-file-lines text-3xl md:text-4xl mr-4 opacity-90"
+                  ></i>
+                  <span class="font-bold leading-tight"
+                    >หลักสูตรวิศวกรรมศาสตรบัณฑิต<br
+                      class="hidden sm:block"
+                    />สาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Tuition Fee & Download Options -->
+          <div class="max-w-4xl mx-auto flex flex-col gap-6">
+            <!-- Tuition Image Banner -->
+            <div
+              class="relative w-full rounded-xl overflow-hidden shadow-2xl h-56 md:h-72 border border-orange-900/50"
+            >
+              <!-- Background Image -->
+              <img
+                src="assets/images/image18.png"
+                alt="Raspberry Pi Board"
+                class="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Document Download Buttons -->
+            <div class="flex flex-col gap-4">
+              <div id="document" class="flex flex-col gap-4 scroll-mt-24">
+                <a
+                  href="#document-details"
+                  class="bg-[#b55823] hover:bg-[#9c4c1e] text-white font-bold text-sm md:text-base py-4 px-6 rounded-lg flex items-center shadow-lg transition-transform hover:-translate-y-0.5 border border-orange-600/50"
+                >
+                  <i
+                    class="fa-solid fa-chevron-down mr-4 opacity-100 text-lg"
+                  ></i>
+                  <span
+                    >เอกสารหลักสูตรสาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ</span
+                  >
+                </a>
+
+                <a
+                  href="#study-plan"
+                  class="bg-[#b55823] hover:bg-[#9c4c1e] text-white font-bold text-sm md:text-base py-4 px-6 rounded-lg flex items-center shadow-lg transition-transform hover:-translate-y-0.5 border border-orange-600/50"
+                >
+                  <i
+                    class="fa-solid fa-chevron-down mr-4 opacity-100 text-lg"
+                  ></i>
+                  <span
+                    >แผนการศึกษา : หลักสูตรวิศวกรรมระบบไอโอทีและสารสนเทศ
+                    (ปรับปรุง พ.ศ. 2565)</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Section 3: Document Details Content Box -->
+            <div
+              id="document-details"
+              class="max-w-4xl mx-auto scroll-mt-24 mt-24"
+            >
+              <a
+                href="#document"
+                class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-up mr-4"></i>
+                <span>เอกสารหลักสูตรสาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ</span>
+              </a>
+
+              <div
+                class="bg-white border border-[#d26b32]/50 border-t-0 p-8 md:p-12 md:px-20 rounded-b-lg shadow-xl flex flex-col items-center w-full"
+              >
+                <!-- Inner pill title -->
+                <div
+                  class="bg-white rounded-[2rem] py-3 px-8 md:px-12 mb-10 text-base md:text-xl font-bold border-4 border-[#fbbf24] shadow-sm text-center text-gray-800 w-fit shrink-0 tracking-wide"
+                >
+                  เอกสารหลักสูตรสาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ
+                </div>
+
+                <!-- Content align left -->
+                <div
+                  class="w-full text-gray-800 text-sm md:text-base leading-relaxed"
+                >
+                  <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                    ชื่อหลักสูตร
+                  </p>
+
+                  <div
+                    class="grid grid-cols-[110px_1fr] md:grid-cols-[140px_1fr] gap-x-2 gap-y-2 mb-8 ml-2 md:ml-4 font-medium"
+                  >
+                    <p class="text-gray-600">ชื่อภาษาไทย</p>
+                    <p class="text-gray-800 font-normal">
+                      หลักสูตรวิศวกรรมศาสตรบัณฑิต
+                      สาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ
+                    </p>
+
+                    <p class="text-gray-600">ชื่อภาษาอังกฤษ</p>
+                    <p class="text-gray-800 font-normal">
+                      Bachelor of Engineering Program in IoT System and
+                      Information Engineering
+                    </p>
+                  </div>
+
+                  <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                    ชื่อปริญญาและสาขาวิชา
+                  </p>
+
+                  <div
+                    class="grid grid-cols-[60px_100px_15px_1fr] md:grid-cols-[70px_110px_20px_1fr] gap-y-1 ml-2 md:ml-4 items-start font-medium leading-loose"
+                  >
+                    <!-- Row 1 -->
+                    <p class="text-gray-800 whitespace-nowrap">ชื่อเต็ม</p>
+                    <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                    <p class="text-gray-600 text-center">:</p>
+                    <p class="text-gray-800 font-normal">
+                      วิศวกรรมศาสตรบัณฑิต (วิศวกรรมระบบไอโอทีและสารสนเทศ)
+                    </p>
+
+                    <!-- Row 2 -->
+                    <p></p>
+                    <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                    <p class="text-gray-600 text-center">:</p>
+                    <p class="text-gray-800 font-normal">
+                      Bachelor of Engineering (IoT System and Information
+                      Engineering)
+                    </p>
+
+                    <!-- Spacer -->
+                    <div class="col-span-4 h-2"></div>
+
+                    <!-- Row 3 -->
+                    <p class="text-gray-800 whitespace-nowrap">ชื่อย่อ</p>
+                    <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                    <p class="text-gray-600 text-center">:</p>
+                    <p class="text-gray-800 font-normal">
+                      วศ.บ. (วิศวกรรมระบบไอโอทีและสารสนเทศ)
+                    </p>
+
+                    <!-- Row 4 -->
+                    <p></p>
+                    <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                    <p class="text-gray-600 text-center">:</p>
+                    <p class="text-gray-800 font-normal">
+                      B.Eng. (IoT system and Information Engineering)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Section 4: Study Plan Details Box -->
+            <div
+              id="study-plan"
+              class="max-w-4xl mx-auto mb-16 scroll-mt-24 mt-24"
+            >
+              <a
+                href="#document"
+                class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-up mr-4"></i>
+                <span
+                  >แผนการศึกษา : หลักสูตรวิศวกรรมระบบไอโอทีและสารสนเทศ (ปรับปรุง
+                  พ.ศ. 2565)</span
+                >
+              </a>
+
+              <div
+                class="bg-white border border-[#d26b32]/50 border-t-0 p-4 md:p-8 rounded-b-lg shadow-xl flex flex-col items-center w-full"
+              >
+                <!-- Study Plan Image -->
+                <img
+                  src="assets/images/image20.png"
+                  alt="Study Plan"
+                  class="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Closing program-iot -->
+
+        <!-- Section: Dual Degree Program Details -->
+        <div id="program-dual-degree" class="scroll-mt-24 mb-24">
+          <div
+            class="max-w-4xl mx-auto flex flex-col gap-0 border border-orange-600/50 rounded-lg shadow-2xl bg-[#140804] overflow-hidden"
+          >
+            <!-- Header Button -->
+            <a
+              href="#program"
+              class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 flex items-center shadow-lg transition-all"
+            >
+              <i class="fa-solid fa-chevron-up mr-4"></i>
+              <span
+                >Dual Degree (B.Eng. IoT System and Information + B.Sc.
+                Industrial Physics)</span
+              >
+            </a>
+
+            <!-- Banner Image & Tuition Fee Overlay -->
+            <img src="assets/images/image21.png" alt="" />
+
+            <!-- Action Grid Buttons -->
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-6 md:p-8 bg-[#140804]"
+            >
+              <!-- Button 1 -->
+              <a
+                href="#dual-degree-what"
+                class="bg-[#e47636] hover:bg-[#c66228] text-white flex flex-col items-center justify-center p-6 rounded-[2rem] aspect-square text-center shadow-[0_4px_15px_rgba(210,107,50,0.2)] transition-transform hover:-translate-y-1 group border border-orange-500/20"
+              >
+                <div
+                  class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-4 text-[#e47636] text-[2.5rem] md:text-[3rem] font-black group-hover:scale-110 transition-transform shadow-inner"
+                >
+                  ?
+                </div>
+                <span class="font-bold text-[13px] md:text-sm leading-snug"
+                  >สองปริญญาคืออะไร ?</span
+                >
+              </a>
+
+              <!-- Button 2 -->
+              <a
+                href="#"
+                class="bg-[#e47636] hover:bg-[#c66228] text-white flex flex-col items-center justify-center p-6 rounded-[2rem] aspect-square text-center shadow-[0_4px_15px_rgba(210,107,50,0.2)] transition-transform hover:-translate-y-1 group border border-orange-500/20"
+              >
+                <div
+                  class="w-16 h-16 md:w-20 md:h-20 bg-transparent flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-14 h-14 md:w-16 md:h-16"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10l6 6v10a2 2 0 0 1-2 2z"
+                    />
+                    <polyline
+                      points="15 4 15 10 21 10"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <line
+                      x1="9"
+                      y1="19"
+                      x2="15"
+                      y2="19"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <line
+                      x1="9"
+                      y1="16"
+                      x2="12"
+                      y2="16"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="3.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <line
+                      x1="13.5"
+                      y1="13.5"
+                      x2="17"
+                      y2="17"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <span class="font-bold text-[13px] md:text-sm leading-snug"
+                  >รายละเอียดหลักสูตร</span
+                >
+              </a>
+
+              <!-- Button 3 -->
+              <a
+                href="#dual-degree-summary"
+                class="bg-[#e47636] hover:bg-[#c66228] text-white flex flex-col items-center justify-center p-6 rounded-[2rem] aspect-square text-center shadow-[0_4px_15px_rgba(210,107,50,0.2)] transition-transform hover:-translate-y-1 group border border-orange-500/20"
+              >
+                <div
+                  class="w-16 h-16 md:w-20 md:h-20 bg-transparent flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-14 h-14 md:w-16 md:h-16"
+                    viewBox="0 0 24 24"
+                    fill="white"
+                  >
+                    <path
+                      d="M5 4h10l6 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm10 1.5V11h5.5L15 5.5z"
+                    />
+                    <circle cx="8" cy="11" r="1.5" fill="#e47636" />
+                    <circle cx="8" cy="15" r="1.5" fill="#e47636" />
+                    <circle cx="8" cy="19" r="1.5" fill="#e47636" />
+                  </svg>
+                </div>
+                <span class="font-bold text-[13px] md:text-sm leading-snug"
+                  >ข้อมูลสรุปหลักสูตร</span
+                >
+              </a>
+
+              <!-- Button 4 -->
+              <a
+                href="#dual-degree-studyplan"
+                class="bg-[#e47636] hover:bg-[#c66228] text-white flex flex-col items-center justify-center p-6 rounded-[2rem] aspect-square text-center shadow-[0_4px_15px_rgba(210,107,50,0.2)] transition-transform hover:-translate-y-1 group border border-orange-500/20"
+              >
+                <div
+                  class="w-16 h-16 md:w-20 md:h-20 bg-transparent flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform"
+                >
+                  <svg
+                    class="w-14 h-14 md:w-16 md:h-16"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></rect>
+                    <line
+                      x1="16"
+                      y1="2"
+                      x2="16"
+                      y2="6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></line>
+                    <line
+                      x1="8"
+                      y1="2"
+                      x2="8"
+                      y2="6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></line>
+                    <line
+                      x1="3"
+                      y1="10"
+                      x2="21"
+                      y2="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></line>
+                    <path
+                      d="M9 16l2 2 4-4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="font-bold text-[13px] md:text-sm leading-snug"
+                  >แผนการเรียน</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Box 1: สองปริญญาคืออะไร ? -->
+        <div id="dual-degree-what" class="max-w-4xl mx-auto mb-24 scroll-mt-24">
+          <a
+            href="#program-dual-degree"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+          >
+            <i class="fa-solid fa-chevron-up mr-4"></i>
+            <span>สองปริญญาคืออะไร ?</span>
+          </a>
+
+          <div
+            class="bg-white border border-[#d26b32]/50 border-t-0 p-8 md:p-12 md:px-20 rounded-b-lg shadow-xl flex flex-col items-center w-full"
+          >
+            <!-- Inner pill title -->
+            <div
+              class="bg-white rounded-[2rem] py-3 px-8 md:px-12 mb-10 text-base md:text-xl font-bold border-4 border-[#fbbf24] shadow-sm text-center text-gray-800 w-fit shrink-0 tracking-wide"
+            >
+              เอกสารโครงการหลักสูตรควบระดับปริญญาตรี 2 ปริญญา
+            </div>
+
+            <!-- Content Card -->
+            <div
+              class="w-full text-gray-800 text-sm md:text-base leading-relaxed"
+            >
+              <!-- Degree 1 -->
+              <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                ปริญญาที่หนึ่ง
+              </p>
+
+              <div
+                class="grid grid-cols-[80px_100px_15px_1fr] md:grid-cols-[100px_110px_20px_1fr] gap-y-1 ml-2 md:ml-6 mb-8 items-start font-medium"
+              >
+                <!-- Row 1 -->
+                <p class="text-gray-800 font-bold whitespace-nowrap">
+                  ชื่อเต็ม
+                </p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ
+                </p>
+
+                <!-- Row 2 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  Bachelor of Engineering (IoT System and Information
+                  Engineering)
+                </p>
+
+                <!-- Spacer -->
+                <div class="col-span-4 h-2"></div>
+
+                <!-- Row 3 -->
+                <p class="text-gray-800 font-bold whitespace-nowrap">ชื่อย่อ</p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วศ.บ. (วิศวกรรมระบบไอโอทีและสารสนเทศ)
+                </p>
+
+                <!-- Row 4 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  B.Eng. (IoT System and Information Engineering)
+                </p>
+              </div>
+
+              <!-- Degree 2 -->
+              <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                ปริญญาที่สอง
+              </p>
+
+              <div
+                class="grid grid-cols-[80px_100px_15px_1fr] md:grid-cols-[100px_110px_20px_1fr] gap-y-1 ml-2 md:ml-6 items-start font-medium"
+              >
+                <!-- Row 1 -->
+                <p class="text-gray-800 font-bold whitespace-nowrap">
+                  ชื่อเต็ม
+                </p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วิทยาศาสตรบัณฑิต สาขาวิชาฟิสิกส์อุตสาหกรรม
+                </p>
+
+                <!-- Row 2 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  Bachelor of Science (Industrial Physics)
+                </p>
+
+                <!-- Spacer -->
+                <div class="col-span-4 h-2"></div>
+
+                <!-- Row 3 -->
+                <p class="text-gray-800 font-bold whitespace-nowrap">ชื่อย่อ</p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วท.บ. (ฟิสิกส์อุตสาหกรรม)
+                </p>
+
+                <!-- Row 4 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  B.Sc. (Industrial Physics)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 2: รายละเอียดหลักสูตร -->
+        <div
+          id="dual-degree-details"
+          class="max-w-4xl mx-auto mb-16 scroll-mt-24"
+        >
+          <a
+            href="#program-dual-degree"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+          >
+            <i class="fa-solid fa-chevron-up mr-4"></i>
+            <span>รายละเอียดหลักสูตร</span>
+          </a>
+
+          <div
+            class="bg-white border border-[#d26b32]/50 border-t-0 p-8 md:p-12 md:px-20 rounded-b-lg shadow-xl flex flex-col items-center w-full"
+          >
+            <!-- Inner pill title -->
+            <div
+              class="bg-white rounded-[2rem] py-3 px-8 md:px-12 mb-10 text-base md:text-xl font-bold border-4 border-[#fbbf24] shadow-sm text-center text-gray-800 w-fit shrink-0 tracking-wide"
+            >
+              เอกสารรายละเอียดหลักสูตรวิศวกรรมระบบไอโอทีและสารสนเทศ
+            </div>
+
+            <!-- Content Card -->
+            <div
+              class="w-full text-gray-800 text-sm md:text-base leading-relaxed"
+            >
+              <!-- Section 1 -->
+              <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                ชื่อหลักสูตร
+              </p>
+
+              <div
+                class="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-x-2 gap-y-2 mb-8 ml-2 md:ml-4 font-medium"
+              >
+                <p class="text-gray-600">ชื่อภาษาไทย</p>
+                <p class="text-gray-800 font-normal">
+                  หลักสูตรวิศวกรรมศาสตรบัณฑิต
+                  สาขาวิชาวิศวกรรมระบบไอโอทีและสารสนเทศ
+                </p>
+
+                <p class="text-gray-600">ชื่อภาษาอังกฤษ</p>
+                <p class="text-gray-800 font-normal">
+                  Bachelor of Engineering Program in IoT System and Information
+                  Engineering
+                </p>
+              </div>
+
+              <!-- Section 2 -->
+              <p class="font-bold text-gray-900 mb-3 text-lg md:text-xl">
+                ชื่อปริญญาและสาขาวิชา
+              </p>
+
+              <div
+                class="grid grid-cols-[80px_100px_15px_1fr] md:grid-cols-[100px_110px_20px_1fr] gap-y-2 ml-2 md:ml-4 items-start font-medium leading-loose"
+              >
+                <!-- Row 1 -->
+                <p class="text-gray-800 whitespace-nowrap">ชื่อเต็ม</p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วิศวกรรมศาสตรบัณฑิต (วิศวกรรมระบบไอโอทีและสารสนเทศ)
+                </p>
+
+                <!-- Row 2 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  Bachelor of Engineering (IoT System and Information
+                  Engineering)
+                </p>
+
+                <!-- Spacer -->
+                <div class="col-span-4 h-2"></div>
+
+                <!-- Row 3 -->
+                <p class="text-gray-800 whitespace-nowrap">ชื่อย่อ</p>
+                <p class="text-gray-600 text-left">(ภาษาไทย)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  วศ.บ. (วิศวกรรมระบบไอโอทีและสารสนเทศ)
+                </p>
+
+                <!-- Row 4 -->
+                <p></p>
+                <p class="text-gray-600 text-left">(ภาษาอังกฤษ)</p>
+                <p class="text-gray-600 text-center">:</p>
+                <p class="text-gray-800 font-normal">
+                  B.Eng. (IoT system and Information Engineering)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 3: ข้อมูลสรุปหลักสูตร -->
+        <div
+          id="dual-degree-summary"
+          class="max-w-4xl mx-auto mb-16 scroll-mt-24"
+        >
+          <a
+            href="#program-dual-degree"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+          >
+            <i class="fa-solid fa-chevron-up mr-4"></i>
+            <span>ข้อมูลสรุปหลักสูตร</span>
+          </a>
+
+          <div
+            class="bg-white border border-[#d26b32]/50 border-t-0 p-8 md:p-12 md:px-20 rounded-b-lg shadow-xl flex flex-col items-center w-full"
+          >
+            <!-- Inner pill title -->
+            <div
+              class="bg-white rounded-[2rem] py-3 px-8 md:px-12 mb-10 text-base md:text-xl font-bold border-4 border-[#fbbf24] shadow-sm text-center text-gray-800 w-fit shrink-0 tracking-wide"
+            >
+              เอกสารข้อมูลสรุปหลักสูตร
+            </div>
+
+            <!-- Content Image -->
+            <div class="w-full flex justify-center">
+              <img
+                src="assets/images/image24.jpg"
+                alt="PhysIoT Dual Degree Summary"
+                class="max-w-full h-auto "
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Box 4: แผนการศึกษา -->
+        <div
+          id="dual-degree-studyplan"
+          class="max-w-4xl mx-auto mb-16 scroll-mt-24"
+        >
+          <a
+            href="#program-dual-degree"
+            class="bg-[#d26b32] hover:bg-[#c26224] text-white font-bold text-sm md:text-base py-4 px-6 rounded-t-lg border border-orange-600/50 flex items-center shadow-lg transition-all cursor-pointer"
+          >
+            <i class="fa-solid fa-chevron-up mr-4"></i>
+            <span
+              >แผนการศึกษา :
+              หลักสูตรฟิสิกส์อุตสาหกรรมและวิศวกรรมระบบไอโอทีและสารสนเทศ(สองปริญญา)</span
+            >
+          </a>
+
+          <div
+            class="bg-white border border-[#d26b32]/50 border-t-0 p-8 md:p-12 md:px-20 rounded-b-lg shadow-xl flex flex-col items-center w-full bg-[#140804]"
+          >
+            <!-- Content Image (No inner pill for this one based on design) -->
+            <div class="w-full flex justify-center">
+              <img
+                src="assets/images/image25.png"
+                alt="Study Plan Dual Degree"
+                class="max-w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll to Top Icon -->
+        <div class="flex justify-center items-center animate-bounce mb-8">
+          <a
+            href="#"
+            id="scrollToTopBtn"
+            class="flex items-center justify-center w-12 h-12 bg-orange-600 hover:bg-orange-500 text-white rounded-full shadow-[0_0_15px_rgba(234,88,12,0.5)] hover:shadow-[0_0_20px_rgba(234,88,12,0.8)] transition-all hover:-translate-y-1"
+            aria-label="Scroll to top"
+          >
+            <i class="fa-solid fa-arrow-up text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer
+      class="border-t border-gray-800 py-8 md:py-6 px-6 md:px-8 flex flex-col md:flex-row justify-between items-center bg-black/80 gap-4 md:gap-0 text-center"
+    >
+      <div class="text-xs text-gray-500">
+        &copy; 2026 Department of IoT and Information Engineering
+      </div>
+      <div class="flex gap-6 md:gap-4">
+        <a href="#" class="text-gray-400 hover:text-white"
+          ><i class="fa-brands fa-facebook text-xl"></i
+        ></a>
+        <a href="#" class="text-gray-400 hover:text-white"
+          ><i class="fa-brands fa-instagram text-xl"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
